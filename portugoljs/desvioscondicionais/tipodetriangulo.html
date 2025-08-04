@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Verificação de Triângulo</title>
+  <link rel="stylesheet" href="tipodetriangulo.css"> 
+</head>
+<body>
+  <h1>Verifique o Tipo do Triângulo</h1>
+  <p>Digite os três lados do triângulo para determinar o tipo.</p>
+
+  <div class="form-container">
+    <input type="number" id="ladoA" placeholder="Primeiro lado">
+    <input type="number" id="ladoB" placeholder="Segundo lado">
+    <input type="number" id="ladoC" placeholder="Terceiro lado">
+    <button onclick="verificarTriangulo()">Verificar</button>
+  </div>
+
+  <div id="resultado" class="resultado"></div>
+
+  <script>
+    function verificarTriangulo() {
+      // Obtém os valores dos lados
+      let ladoA = parseFloat(document.getElementById("ladoA").value);
+      let ladoB = parseFloat(document.getElementById("ladoB").value);
+      let ladoC = parseFloat(document.getElementById("ladoC").value);
+
+      // Verifica se os lados formam um triângulo
+      if (isNaN(ladoA) || isNaN(ladoB) || isNaN(ladoC)) {
+        alert("Por favor, preencha todos os lados corretamente.");
+        return;
+      }
+
+      // Verifica o tipo de triângulo
+      let tipo = "";
+
+      if (ladoA === ladoB && ladoA === ladoC) {
+        tipo = "Equilátero: Possui os 3 lados iguais.";
+      } else if (ladoA === ladoB || ladoB === ladoC || ladoC === ladoA) {
+        tipo = "Isósceles: Possui 2 lados iguais.";
+      } else {
+        tipo = "Escaleno: Possui todos os lados diferentes.";
+      }
+
+      // Exibe o resultado
+      document.getElementById("resultado").innerText = tipo;
+    }
+  </script>
+</body>
+</html>

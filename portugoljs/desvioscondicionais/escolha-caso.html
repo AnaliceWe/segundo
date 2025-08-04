@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Escolha uma Opção</title>
+  <link rel="stylesheet" href="escolha-caso.css">
+</head>
+<body>
+  <h1>Escolha uma Opção</h1>
+
+  <div class="form-container">
+    <p>1) Elogio</p>
+    <p>2) Ofensa</p>
+    <p>3) Sair</p>
+    <input type="number" id="opcao" placeholder="Escolha uma opção (1, 2 ou 3)">
+    <button onclick="escolher()">Escolher</button>
+  </div>
+
+  <div id="resultado" class="resultado"></div>
+
+  <script>
+    function escolher() {
+      let opcao = parseInt(document.getElementById("opcao").value);
+      let resultado = "";
+
+      // Verifica a opção escolhida e exibe a mensagem correspondente
+      switch (opcao) {
+        case 1:
+          resultado = "Você é lindo(a)!";
+          break;
+        case 2:
+          resultado = "Você é um monstro!";
+          break;
+        case 3:
+          resultado = "Tchau!";
+          break;
+        default:
+          resultado = "Opção Inválida!";
+      }
+
+      // Exibe o resultado
+      document.getElementById("resultado").innerText = resultado;
+    }
+  </script>
+</body>
+</html>

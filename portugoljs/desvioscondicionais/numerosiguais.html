@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jogo de Sorteio - Número entre 0 e 6</title>
+  <link rel="stylesheet" href="numerosiguais.css"> 
+</head>
+<body>
+  <h1>Jogo de Sorteio</h1>
+  <p>Informe um número de 0 a 6 e descubra se acertou o sorteio!</p>
+  <button onclick="verificarSorteio()">Tentar a Sorte</button>
+
+  <script>
+    function verificarSorteio() {
+      // Solicita ao usuário que informe um número inteiro de 0 a 6
+      let numDigitado = parseInt(prompt("Digite um número entre 0 e 6:"));
+
+      // Verifica se a entrada é válida
+      if (isNaN(numDigitado) || numDigitado < 0 || numDigitado > 6) {
+        alert("Por favor, insira um número válido entre 0 e 6.");
+        return;
+      }
+
+      // Gera um número aleatório entre 0 e 6
+      let numSorteado = Math.floor(Math.random() * 7); // O número 7 não é incluído
+
+      // Compara os números e exibe a mensagem apropriada
+      if (numDigitado === numSorteado) {
+        alert(`Parabéns! Você acertou! 🎉\nNúmero sorteado: ${numSorteado}`);
+      } else {
+        alert(`Que pena! Os números são diferentes.\nNúmero digitado: ${numDigitado}\nNúmero sorteado: ${numSorteado}`);
+      }
+    }
+  </script>
+</body>
+</html>

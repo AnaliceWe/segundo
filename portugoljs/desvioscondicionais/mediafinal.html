@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resultado da Média</title>
+  <link rel="stylesheet" href="mediafinal.css"> 
+</head>
+<body>
+  <h1>Resultado da média escolar final</h1>
+  <p>Informe seu nome e as três notas para saber sua situação.</p>
+
+  <div class="form-container">
+    <input type="text" id="nome" placeholder="Digite seu nome">
+    <input type="number" id="nota1" placeholder="Primeira nota" step="0.01">
+    <input type="number" id="nota2" placeholder="Segunda nota" step="0.01">
+    <input type="number" id="nota3" placeholder="Terceira nota" step="0.01">
+    <button onclick="calcularMedia()">Calcular Resultado</button>
+  </div>
+
+  <div id="resultado" class="resultado"></div>
+
+  <script>
+    function calcularMedia() {
+      // Obtém os valores dos campos
+      let nome = document.getElementById("nome").value;
+      let nota1 = parseFloat(document.getElementById("nota1").value);
+      let nota2 = parseFloat(document.getElementById("nota2").value);
+      let nota3 = parseFloat(document.getElementById("nota3").value);
+      
+      // Verifica se todos os campos foram preenchidos corretamente
+      if (nome === "" || isNaN(nota1) || isNaN(nota2) || isNaN(nota3)) {
+        alert("Por favor, preencha todos os campos corretamente.");
+        return;
+      }
+
+      // Calcula a média
+      let media = (nota1 + nota2 + nota3) / 3;
+      
+      // Exibe o resultado
+      let resultadoText = "";
+      if (media >= 6) {
+        resultadoText = `Parabéns ${nome}! Você foi aprovado com a média ${media.toFixed(2)}.`;
+      } else {
+        resultadoText = `Que pena ${nome}. Você foi reprovado com a média ${media.toFixed(2)}.`;
+      }
+
+      document.getElementById("resultado").innerText = resultadoText;
+    }
+  </script>
+</body>
+</html>

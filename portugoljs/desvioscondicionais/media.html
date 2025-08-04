@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora de Média</title>
+  <link rel="stylesheet" href="media.css">
+</head>
+<body>
+  <h1>Calculadora de Média</h1>
+  <p>Clique no botão abaixo para calcular a média de três notas:</p>
+  <button onclick="calcularMedia()">Calcular Média</button>
+
+  <script>
+    // Função principal
+    function calcularMedia() {
+      // Solicita ao usuário que informe as três médias
+      let m1 = parseFloat(prompt("Informe a média 1:"));
+      let m2 = parseFloat(prompt("Informe a média 2:"));
+      let m3 = parseFloat(prompt("Informe a média 3:"));
+
+      // Verifica se as entradas são números válidos
+      if (isNaN(m1) || isNaN(m2) || isNaN(m3)) {
+        alert("Por favor, insira apenas números.");
+        return;
+      }
+
+      // Calcula a média final
+      let media = (m1 + m2 + m3) / 3;
+
+      // Arredonda a média para duas casas decimais
+      media = media.toFixed(2);
+
+      // Exibe a média final
+      alert(`A média final é: ${media}`);
+
+      // Verifica se alguma das médias é menor que a média final
+      if (m1 < media) {
+        alert("A média 1 é menor que a média final.");
+      }
+      
+      if (m2 < media) {
+        alert("A média 2 é menor que a média final.");
+      }
+
+      if (m3 < media) {
+        alert("A média 3 é menor que a média final.");
+      }
+    }
+  </script>
+</body>
+</html>
