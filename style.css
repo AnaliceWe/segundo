@@ -1,0 +1,135 @@
+/* Estilos para o menu */
+nav .menu {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.menu li {
+    display: inline;
+}
+
+.menu a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 15px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.menu a:hover {
+    color: #7eb235;
+}
+/* Estilos para o menu */
+nav .menu {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.menu li {
+    display: inline;
+    position: relative;
+}
+
+.menu a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 15px;
+    font-weight: bold;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+/* Animação de sublinhado */
+.menu a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #7eb235;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+    transform-origin: right;
+}
+
+/* Efeito ao passar o mouse */
+.menu a:hover {
+    color: #7eb235;
+}
+
+.menu a:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #ea6262;
+    background-color: #7eb235;
+    line-height: 1.6;
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+    background-color: #426b24;
+    color: #fff;
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+p {
+    margin: 10px 0;
+}
+
+main {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+.trabalhos .trabalho {
+    margin: 10px 0;
+    padding: 10px;
+    background: #e9e9e9;
+    border-left: 4px solid #426b24;
+}
+
+.trabalho h2 {
+    font-size: 1.5em;
+}
+
+.trabalho a {
+    color: #426b24;
+    text-decoration: none;
+}
+
+.trabalho a:hover {
+    color: #7eb235;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background: #426b24;
+    color: #fff;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
